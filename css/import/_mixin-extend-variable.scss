@@ -1,0 +1,199 @@
+//////////////////// Margin /////////////////////////////
+
+%margin-zero {
+    margin: 0;
+}
+
+@mixin margin1 ($margin) {
+    margin-left: $margin;
+}
+
+@mixin margin_top ($margint) {
+    margin-top: $margint
+}
+
+@mixin margin_bottom ($marginb) {
+    margin-bottom: $marginb;
+}
+
+//////////////////// Padding ////////////////////////////
+
+@mixin padding1 ($padding) {
+    padding: $padding;
+}
+
+@mixin padding2($padding1, $padding2) {
+   padding: {
+    top: $padding1;
+    bottom: $padding1;
+    right: $padding2;
+    left: $padding2;
+   }
+}
+
+//////////////// Position-Display ////////////////////////
+
+.posicao1 {position: relative;}
+
+.posicao2 {position: absolute;}
+
+.display1 {display: flex;}
+
+.display2 {display: inline-block;}
+
+.classe1 { 
+    @extend .posicao1;
+    @extend .display1;
+}
+.classe2 { 
+    @extend .posicao2;
+    @extend .display1;
+}
+.classe3 { 
+    @extend .display2;
+    @extend .display1;
+}
+
+///////////////////// Width /////////////////////////////
+
+@mixin width1 ($width) {
+    width: $width;
+}
+
+///////////////////// Align /////////////////////////////
+
+@mixin align($align) {
+    @if $align != 0 {
+        align-items: $align-i;
+        justify-content: $justify-c;
+    }
+    @else {
+        align-items: $align-i;
+        justify-content: $justify-c1;
+    }
+}
+
+//////////////// Background-color ////////////////////////
+
+@mixin back-ground($letra) {
+    font-display: $letra;
+    @if $letra == "black" {
+        background-color: $cor1;
+    }
+    @else { 
+        background-color: $cor2;
+    }
+}
+
+@mixin cores($cores) {
+    color: $cores;
+    @if $cores == "branco" {
+        color: $cor3;
+    }
+    @else if $cores == "vermelho" {
+        color: $cor2;
+    }
+    @else {
+        color: $cor1;
+    }
+}
+
+////////////////// Top and Left //////////////////////////
+
+@mixin top-left($top1, $left1) {
+    top: $top1;
+    left: $left1;
+}
+
+/////////////////// Height ////////////////////////////
+
+@mixin height1 ($height) {
+    height: $height;
+}
+
+/////////////////// Max-width ///////////////////////////
+
+@mixin max-width1($max) {
+    @if $max <= 120 {
+        max-width: 120px;
+    }
+    @else {
+        max-width: 600px;
+    }
+}
+
+////////////////// List-style ///////////////////////////
+
+%list-style1 {
+    list-style: none;
+}
+
+////////////////// Font-Weight ///////////////////////////
+
+@mixin font--weight($weight) {
+    @if $weight == 500 {
+        font-weight: 500;
+    }
+    @else {
+        font-weight: 700;
+    }
+}
+
+//////////////// Text-decoration /////////////////////////
+
+%decoration-text1 {
+    text-decoration: none;
+}
+
+/////////////////// Font-size ////////////////////////////
+
+@mixin size-font ($size) {
+    font-size: $size;
+}
+
+//////////////////// Bottom //////////////////////////////
+
+@mixin bottom1($bottom) {
+    bottom: $bottom;
+}
+
+//////////////////// Left /////////////////////////////
+
+@mixin left1($left3) {
+    @if $left3 > 1 {
+        left: 100px;
+    }
+    @else {
+        left: 0.1;
+    }
+}
+
+///////////////// Border-radius //////////////////////////
+
+@mixin border-radius1($border) {
+    @if $border < 50 {
+        border-radius: 40px;
+    }
+    @else {
+        border-radius: 50%;
+    }
+}
+
+////////////////// Transform /////////////////////////////
+
+@mixin transform-rotate1($rotate) {
+    transform: rotate($rotate);
+}
+
+@mixin translateY-scale($transform) {
+    @if $transform == 'scale' {
+        transform: scale(0.5);
+    }
+    @else {
+        transform: translateY(-10px);
+    }
+}
+
+@mixin transition1($transition1) {
+    transition: 0.3s $transition1;
+}
