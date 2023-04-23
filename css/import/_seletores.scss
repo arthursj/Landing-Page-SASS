@@ -1,230 +1,211 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import './values';
+@import './_mixin-extend-variable.scss';
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    @extend %margin-zero;
+    @include padding1($padding1um);
+    box-sizing: $border-b;
+    font-family: $fonte;
 }
-
 section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #121212;
-  overflow: hidden;
+    @extend .classe1;
+    @include width1($width2);
+    min-height: $min-height;
+    @include padding1($padding1dois);
+    @include align(1);
+    @include back-ground("black");
+    overflow: $hidden;
 }
-
 .circle {
-  position: absolute;
-  top: 40px;
-  left: 10px;
-  width: 100%;
-  height: 100%;
-  background: #e51e2a;
-  -webkit-clip-path: circle(50% at bottom right);
-          clip-path: circle(50% at bottom right);
+    @extend .posicao2;
+    @include top-left($top-left, $top-left1);
+    @include width1($width2);
+    @include height1($height1);
+    @include back-ground(others);
+    clip-path: circle(50% at bottom right);
 }
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 40px 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .logo {
-    position: relative;
-    max-width: 120px;
-    .logo::-moz-selection {
-      background-color: #e51e2a;
-    }
-    .logo::selection {
-      background-color: #e51e2a;
-    }
-    .navegation 
-      ul {
-          position: relative;
-          display: flex;
-      }
-      li {
-        list-style: none;
-      }
-      a {
-        display: inline-block;
-        color: #fff;
-        font-weight: 500;
-        text-decoration: none;
-        font-size: 15px;
-        margin-left: 100px;
+    @extend .classe2;
+    @include top-left($top-left2, $top-left2);
+    @include width1($width2);
+    @include padding2($padding2um, $padding2dois);
+    @include align(1);
+    .logo {
+        @extend .posicao1;
+        @include max-width1(120);
         &::-moz-selection {
-          background-color: #e51e2a;
+            @include back-ground('others');
         }
         &::selection {
-          background-color: #e51e2a;
+            @include back-ground("others");
         }
-        &::before {
-          content: "";
-          position: absolute;
-          width: 0%;
-          height: 5px;
-          bottom: 0;
-          left: 0.1;
-          background-color: #e51e2a;
+    }
+    .navegation {
+        ul {
+            @extend .posicao1;
+            @extend .display1;
         }
-        &:hover::before {
-          width: 70px;
-          top: 5vh;
-          transition: 0.3s ease;
+        li {
+            @extend %list-style1;
         }
-      }
-  }
+        a {
+            @extend .display2;
+            @include cores("branco");
+            @include font--weight(500);
+            @extend %decoration-text1;
+            @include size-font($font);
+            @include margin1($margin1um);
+            &::-moz-selection {
+                @include back-ground(1);
+            }
+            &::selection {
+                @include back-ground(2);
+            }
+            &::before {
+                content: "";
+                @extend .posicao2;
+                @include width1($width3);
+                @include height1($height2);
+                @include bottom1($bottom);
+                @include left1(0);
+                @include back-ground(3);
+            }
+            &:hover::before {
+                @include width1($width4);
+                top: $top2;
+                @include transition1(ease);
+            }
+        }
+    }
 }
-
-
-
 .content {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .text {
-    position: relative;
-    max-width: 600px;
-    margin-right: 20px;
-    h2 {
-      color: #fff; /* #fff */
-      font-size: 1.5em;
-      margin-top: 80px;
-      margin-bottom: 10px;
-      line-height: 2.5em;
-      font-weight: 700;
-      &::-moz-selection {
-        background-color: #e51e2a;
-      }
-      &::selection {
-        background-color: #e51e2a;
-      }
-      br::-moz-selection {
-        background-color: #e51e2a;
-      }
-      br::selection {
-        background-color: #e51e2a;
-      }
+    @extend .classe1;
+    @include width1($width2);
+    @include align(1);
+    .text {
+        @extend .posicao1;
+        @include max-width1(121);
+        margin-right: $margin-r;
+        @include margin1($margin1dois);
+        h2 {
+            @include cores(branco);
+            @include size-font($font1);
+            @include margin_top($margin-t);
+            @include margin_bottom($margin-b);
+            line-height: $line-height;
+            @include font--weight(700);
+            &::-moz-selection {
+                @include back-ground(4);
+            }
+            &::selection {
+                @include back-ground(5);
+            }
+            br::-moz-selection {
+                @include back-ground(6);
+            }
+            br::selection {
+                @include back-ground(7);
+            }
+        }
+        span {
+            @include size-font($font2);
+            @include cores("vermelho");
+            &::-moz-selection {
+                @include back-ground(8);
+                @include cores("preto");
+            }
+            &::selection {
+                @include back-ground(9);
+                @include cores("preto");
+            }
+        }
+        p {
+            @include cores("branco");
+            @include size-font($font3);
+            &::-moz-selection {
+                @include back-ground(10);
+            }
+            &::selection {
+                @include back-ground(11);
+            }
+        }
+        a {
+            @extend .display2;
+            @include margin_top($margin-t1);
+            @include margin_bottom($margin-b1); 
+            @include size-font($font3);
+            @include padding2($padding2tres, $padding2quatro);
+            @include back-ground(12);
+            @include cores(branco);
+            @include font--weight(500);
+            letter-spacing: $letter-s;
+            @extend %decoration-text1;
+            @include border-radius1(49);
+            @include transition1(ease-in-out);
+            &::-moz-selection {
+                @include back-ground("black");
+            }
+            &::selection {
+                @include back-ground("black");
+            }
+            &:hover {
+                @include translateY-scale('translate');
+            }
+        }
     }
-    span {
-      font-size: 3.5em;
-      color: #e51e2a;
-      &::-moz-selection {
-        background-color: #e51e2a;
-        color: #121212;
-      }
-      
-      &::selection {
-        background-color: #e51e2a;
-        color: #121212;
-      }
-    }
-    p {
-      color: #fff;
-      font-size: 13px;
-      &::-moz-selection {
-        background-color: #e51e2a;
-      }
-      &::selection {
-        background-color: #e51e2a;
-      }
+}
+.icons {
+    @extend .classe2;
+    @include bottom1($bottom1);
+    @include left1(2);
+    @include align(0);
+    @include margin1($margin1tres);
+    li {
+        @extend %list-style1;
     }
     a {
-      display: inline-block;
-      margin-top: 50px;
-      margin-bottom: 70px;
-      font-size: 13px;
-      padding: 10px 20px;
-      background: #e51e2a;
-      color: #fff;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-decoration: none;
-      border-radius: 40px;
-      transition: 0.3s ease-in-out;
-      &::-moz-selection {
-        background-color: #121212;
-      }
-      &::selection {
-        background-color: #121212;
-      }
-      &:hover {
-        transform: translateY(-10px);
-      }
+        @include margin1($margin1quatro);
+        @include back-ground("black");
+        @include width1($width5);
+        @include height1($height3);
+        @extend .display1;
+        @include align(0);
+        @include border-radius1(50);
+        @include transition1(ease-in-out);
+        &:hover {
+            @include back-ground(12);
+            @include translateY-scale('translate');
+        }
     }
-  }
-}
-
-.icons {
-  position: absolute;
-  bottom: 40px;
-  left: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: -30px;
-  li {
-    list-style: none;
-  }
-  a {
-    display: inline-block;
-    margin-left: 45px;
-    background: #222;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    transition: 0.3s ease-in-out;
-    &:hover {
-      background: #e51e2a;
-      transform: translateY(-10px);
+    img {
+        filter: invert($filter-i);
+        @include translateY-scale("scale");
     }
-  }
-  img {
-    filter: invert(1);
-    transform: scale(0.5);
-  }
 }
 
 .boxImg {
-  position: absolute;
-  right: 0;
-  bottom: -40px;
-  .boxImg img {
-    width: 130px;
-    &::-moz-selection {
-      background-color: #121212;
+    @extend .posicao2;
+    right: $right;
+    @include bottom1($bottom2);
+    img {
+        @include width1($width6);
+        &::-moz-selection {
+            @include back-ground("black");
+        }
+        &::selection {
+            @include back-ground("black");
+        }
     }
-    &::selection {
-      background-color: #121212;
+    .img1 {
+        @include transform-rotate1(-15deg);
     }
-  }
-  .img1 {
-    transform: rotate(-15deg);
-  }
-  .img2 {
-    transform: rotate(5deg);
-  }
-  
-  .img3 {
-    transform: rotate(15deg);
-  }
-  .img4 {
-    transform: rotate(-15deg);
-  }
+    .img2 {
+        @include transform-rotate1(5deg);
+    }
+    .img3 {
+        @include transform-rotate1(15deg);
+    }
+    .img4 {
+        @extend .img1;
+    }
 }
-
-/*# sourceMappingURL=main.css.map */
