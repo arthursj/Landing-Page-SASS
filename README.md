@@ -1,5 +1,5 @@
 <h1 align="center"> 
-    Meme-Generator
+    Landing-Page
 </h1>
 <p align="center">
   <a href="#-About">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
