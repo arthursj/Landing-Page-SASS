@@ -1,5 +1,5 @@
 <h1 align="center"> 
-    Landing-Page
+    Landing-Page-SASS
 </h1>
 <p align="center">
   <a href="#-About">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
